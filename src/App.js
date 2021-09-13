@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBare from './Components/NavBare';
-import Itemspro from './Components/Itemspro';
+import ItemList from './Components/ItemList';
 
 
 

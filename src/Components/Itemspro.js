@@ -1,23 +1,31 @@
 import React from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Table, button } from 'react-bootstrap'
 
-const Itemspro = ({produit, hands}) => {
-    const (price, image, name)=produit
+const Itemspro= ({produit,hands,titel})=> {
+  const {name,image,price} =produit
+  
+      return (
+          <div>
+             {
+             <Table striped bordered hover>
+      <tr>
+      <th><h6>{titel}</h6> </th>
+        <th>{name}</th>
+        <th><img style={{width:100}} src={image} alt="" /></th>
+        <th> {price}</th>
+        <th> <button onClick={()=>hands(name,price)}>info</button>
+  </th>
+      </tr>
     
+  </Table>  }
+          </div>
+      )
+  
+      }
 
-    return (
-        <div>
-           <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={el.image} />
-  <Card.Body>
-    <Card.Title> {el.name}</Card.Title>
-    <Card.Text>
-      {el.price}
-    </Card.Text>
-    <Button variant="primary">onClick ={()=> hands ()} Go somewhere</Button>
-  </Card.Body>
-</Card>
-        </div>
+      Itemspro.defaultProps = {
+          titel :"this is default props"}
 
 
 export default Itemspro
+
